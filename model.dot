@@ -1,0 +1,224 @@
+digraph G {
+	graph [bb="0,0,4687.6,3229.1"];
+	node [label="\N",
+		shape=oval
+	];
+	n1	 [height=1.041,
+		label="Node1\ninput = {}\lreverseMap = {}",
+		pos="2029.8,3191.6",
+		tooltip="[[C]]:-1_",
+		width=2.1606];
+	n2	 [height=3.398,
+		label="a_hat (2)\ndesc = output\nmodule = [0;34mnn.Sequential[0m[0;34m {[0m\l  [0;34m[input[0m[0;34m -> [0m[0;34m([0m1[0;34m)[\
+0m[0;34m -> [0m[0;34m([0m2[0;34m)[0m[0;34m -> [0m[0;34m([0m3[0;34m)[0m[0;34m -> [0m[0;34m([0m4[0;34m)[0m[0;34m \
+-> [0m[0;34moutput][0m\l  [0;34m([0m1[0;34m): [0mnn.CAddTable\l  [0;34m([0m2[0;34m): [0mnn.Linear(20 -> 214) without \
+bias\l  [0;34m([0m3[0;34m): [0mnn.LogSoftMax\l  [0;34m([0m4[0;34m): [0mnn.Squeeze\l[0;34m}[0m\lreverseMap = {}\lmapindex = {\
+Node3,Node4}",
+		pos="2029.8,2995.8",
+		tooltip="[train.lua]:145_",
+		width=30.956];
+	n1 -> n2	 [pos="e,2029.8,3118.3 2029.8,3153.7 2029.8,3146 2029.8,3137.5 2029.8,3128.6"];
+	n3	 [height=2.5142,
+		label="u2 (3)\ndesc = u2 layer (u1 + o1)\nmodule = [0;34mnn.Sequential[0m[0;34m {[0m\l  [0;34m[input[0m[0;34m -> [0m[0;34m([0m1[\
+0;34m)[0m[0;34m -> [0m[0;34moutput][0m\l  [0;34m([0m1[0;34m): [0mnn.CAddTable\l[0;34m}[0m\lreverseMap = {}\lmapindex = {\
+Node5,Node6}",
+		pos="2476.8,2334.1",
+		tooltip="[train.lua]:130_",
+		width=13.317];
+	n2 -> n3	 [pos="e,2498.7,2424.7 2286.1,2876.6 2361.4,2828.3 2434.8,2764.5 2476.8,2684.1 2516.8,2607.5 2512.3,2508 2500.4,2434.9"];
+	n4	 [height=1.6303,
+		label="o3 (4)\ndesc = p3 weighted c3\nmodule = nn.MM\lreverseMap = {}\lmapindex = {Node7,Node8}",
+		pos="1564.8,2778.8",
+		tooltip="[train.lua]:134_",
+		width=3.457];
+	n2 -> n4	 [pos="e,1652.7,2820.4 1774.2,2876.6 1734.2,2858.1 1695.2,2840.1 1661.9,2824.7"];
+	n5	 [height=2.5142,
+		label="u1 (5)\ndesc = u1 layer (u0 + o0)\nmodule = [0;34mnn.Sequential[0m[0;34m {[0m\l  [0;34m[input[0m[0;34m -> [0m[0;34m([0m1[\
+0;34m)[0m[0;34m -> [0m[0;34moutput][0m\l  [0;34m([0m1[0;34m): [0mnn.CAddTable\l[0;34m}[0m\lreverseMap = {}\lmapindex = {\
+Node9,Node10}",
+		pos="3206.8,1704.3",
+		tooltip="[train.lua]:122_",
+		width=13.317];
+	n3 -> n5	 [pos="e,3326.6,1792 2810.6,2269.1 3029.1,2219.7 3285.8,2144.6 3351.8,2054.2 3410.4,1974 3393.1,1921.1 3351.8,1830.8 3346.8,1819.9 3340.4,\
+1809.6 3333,1799.9"];
+	n6	 [height=1.6303,
+		label="o1 (6)\ndesc = p2 weighted c\nmodule = nn.MM\lreverseMap = {}\lmapindex = {Node11,Node12}",
+		pos="2439.8,2148.9",
+		tooltip="[train.lua]:127_",
+		width=3.7123];
+	n3 -> n6	 [pos="e,2451.5,2207.6 2458.7,2243.7 2457,2234.9 2455.2,2226 2453.4,2217.5"];
+	n7	 [height=3.1034,
+		label="p3 (7)\ndesc = distribution over u2^T m\nmodule = [0;34mnn.Sequential[0m[0;34m {[0m\l  [0;34m[input[0m[0;34m -> [0m[0;34m([\
+0m1[0;34m)[0m[0;34m -> [0m[0;34m([0m2[0;34m)[0m[0;34m -> [0m[0;34m([0m3[0;34m)[0m[0;34m -> [0m[0;34moutput][0m\l  [\
+0;34m([0m1[0;34m): [0mnn.MM\l  [0;34m([0m2[0;34m): [0mnn.Squeeze\l  [0;34m([0m3[0;34m): [0mnn.View(1, 9)\l[0;34m}[0m\lreverseMap = {}\lmapindex = {\
+Node3,Node12}",
+		pos="1564.8,2572.3",
+		tooltip="[train.lua]:131_",
+		width=25.083];
+	n4 -> n7	 [pos="e,1564.8,2684.4 1564.8,2720 1564.8,2711.9 1564.8,2703.2 1564.8,2694.4"];
+	n8	 [height=1.6303,
+		label="c3 (8)\ndesc = output embeddings\nmodule = nn.CMulTable\lreverseMap = {}\lmapindex = {Node13,Node14}",
+		pos="652.8,1010.8",
+		tooltip="[train.lua]:133_",
+		width=3.7123];
+	n4 -> n8	 [pos="e,649,1069.5 1440.5,2773.8 1203.6,2765 706.13,2740 652.8,2684.1 545.64,2571.6 633.8,2490.4 633.8,2335.1 633.8,2335.1 633.8,2335.1 \
+633.8,1486.3 633.8,1341.2 642.77,1171.5 648.38,1079.5"];
+	n9	 [height=2.5142,
+		label="u (9)\ndesc = query embeddings\nmodule = [0;34mnn.Sequential[0m[0;34m {[0m\l  [0;34m[input[0m[0;34m -> [0m[0;34m([0m1[\
+0;34m)[0m[0;34m -> [0m[0;34m([0m2[0;34m)[0m[0;34m -> [0m[0;34moutput][0m\l  [0;34m([0m1[0;34m): [0mnn.Sum\l  [0;\
+34m([0m2[0;34m): [0mnn.View(1, 20)\l[0;34m}[0m\lreverseMap = {}",
+		pos="3996.8,1010.8",
+		tooltip="[train.lua]:114_",
+		width=19.19];
+	n5 -> n9	 [pos="e,4058.6,1101 3593,1650.5 3770.3,1604.9 3964.7,1519.7 4072.8,1360.7 4128.6,1278.6 4099.5,1232.9 4072.8,1137.3 4070.3,1128.2 4066.9,\
+1119.1 4062.9,1110.2"];
+	n10	 [height=1.6303,
+		label="o (10)\ndesc = p1 weighted c\nmodule = nn.MM\lreverseMap = {}\lmapindex = {Node16,Node17}",
+		pos="3160.8,1487.3",
+		tooltip="[train.lua]:119_",
+		width=3.7123];
+	n5 -> n10	 [pos="e,3173.1,1545.8 3187.6,1613.6 3183.5,1594.3 3179.2,1574.2 3175.3,1555.8"];
+	n11	 [height=3.1034,
+		label="p2 (11)\ndesc = distribution over u1^T m\nmodule = [0;34mnn.Sequential[0m[0;34m {[0m\l  [0;34m[input[0m[0;34m -> [0m[0;\
+34m([0m1[0;34m)[0m[0;34m -> [0m[0;34m([0m2[0;34m)[0m[0;34m -> [0m[0;34m([0m3[0;34m)[0m[0;34m -> [0m[0;34moutput][\
+0m\l  [0;34m([0m1[0;34m): [0mnn.MM\l  [0;34m([0m2[0;34m): [0mnn.Squeeze\l  [0;34m([0m3[0;34m): [0mnn.View(1, 9)\l[0;\
+34m}[0m\lreverseMap = {}\lmapindex = {Node5,Node17}",
+		pos="2439.8,1942.5",
+		tooltip="[train.lua]:124_",
+		width=25.083];
+	n6 -> n11	 [pos="e,2439.8,2054.6 2439.8,2090.2 2439.8,2082 2439.8,2073.4 2439.8,2064.6"];
+	n12	 [height=1.6303,
+		label="c2 (12)\ndesc = output embeddings\nmodule = nn.CMulTable\lreverseMap = {}\lmapindex = {Node18,Node14}",
+		pos="1489.8,1704.3",
+		tooltip="[train.lua]:126_",
+		width=3.7123];
+	n6 -> n12	 [pos="e,1487.7,1763.2 2306.5,2143.3 2066.6,2133.8 1581.9,2108 1527.8,2054.2 1489.5,2016.2 1486,1863.7 1487.5,1773.3"];
+	n7 -> n3	 [pos="e,2196.9,2407.6 1950.9,2471.3 2029.9,2450.9 2111.9,2429.6 2186.8,2410.2"];
+	n7 -> n12	 [pos="e,1487,1763.1 1542.6,2460.5 1522.9,2356.1 1495.6,2195.3 1484.8,2054.2 1477.2,1955.2 1482.8,1930.1 1484.8,1830.8 1485.2,1812.1 1485.9,\
+1791.9 1486.6,1773.2"];
+	n13	 [height=2.5142,
+		label="c3_pre (13)\ndesc = output embeddings\nmodule = [0;34mnn.Sequential[0m[0;34m {[0m\l  [0;34m[input[0m[0;34m -> [0m[0;34m([\
+0m1[0;34m)[0m[0;34m -> [0m[0;34m([0m2[0;34m)[0m[0;34m -> [0m[0;34moutput][0m\l  [0;34m([0m1[0;34m): [0mnn.LookupTable\l  [\
+0;34m([0m2[0;34m): [0mnn.Sum\l[0;34m}[0m\lreverseMap = {}",
+		pos="739.8,576.75",
+		tooltip="[train.lua]:132_",
+		width=19.19];
+	n8 -> n13	 [pos="e,704.35,667.17 656.75,952.03 661.87,889.88 672.75,788.48 693.8,703.26 695.95,694.57 698.49,685.66 701.26,676.78"];
+	n14	 [height=1.3356,
+		label="te_inp (14)\ndesc = temporal encoding\nmodule = nn.Identity\lreverseMap = {}",
+		pos="814.8,793.77",
+		tooltip="[train.lua]:109_",
+		width=3.1034];
+	n8 -> n14	 [pos="e,780.77,839.94 694.31,954.69 719.03,921.89 750.24,880.46 774.7,847.99"];
+	n15	 [height=1.3356,
+		label="q_pre (15)\ndesc = pre embeddings\nmodule = nn.LookupTable\lreverseMap = {}",
+		pos="3984.8,793.77",
+		tooltip="[train.lua]:112_",
+		width=3.2213];
+	n9 -> n15	 [pos="e,3987.4,841.97 3991.8,920.16 3990.5,897.08 3989.2,872.88 3988,851.96"];
+	n16	 [height=3.1034,
+		label="p1 (16)\ndesc = distribution over u^T m\nmodule = [0;34mnn.Sequential[0m[0;34m {[0m\l  [0;34m[input[0m[0;34m -> [0m[0;34m([\
+0m1[0;34m)[0m[0;34m -> [0m[0;34m([0m2[0;34m)[0m[0;34m -> [0m[0;34m([0m3[0;34m)[0m[0;34m -> [0m[0;34moutput][0m\l  [\
+0;34m([0m1[0;34m): [0mnn.MM\l  [0;34m([0m2[0;34m): [0mnn.Squeeze\l  [0;34m([0m3[0;34m): [0mnn.View(1, 9)\l[0;34m}[0m\lreverseMap = {}\lmapindex = {\
+Node9,Node22}",
+		pos="3160.8,1249",
+		tooltip="[train.lua]:118_",
+		width=25.083];
+	n10 -> n16	 [pos="e,3160.8,1360.8 3160.8,1428.5 3160.8,1410.9 3160.8,1391 3160.8,1370.9"];
+	n17	 [height=1.6303,
+		label="c (17)\ndesc = output embeddings\nmodule = nn.CMulTable\lreverseMap = {}\lmapindex = {Node23,Node14}",
+		pos="2105.8,1249",
+		tooltip="[train.lua]:117_",
+		width=3.7123];
+	n10 -> n17	 [pos="e,2159.9,1302.8 3029.1,1476.5 2811.4,1459.1 2386.8,1418.8 2248.8,1360.7 2219.7,1348.5 2191.3,1328.8 2167.7,1309.3"];
+	n11 -> n5	 [pos="e,2958.6,1781.7 2773.7,1838.7 2832.4,1820.6 2892.7,1802 2948.9,1784.7"];
+	n11 -> n17	 [pos="e,2160.1,1302.8 2410.5,1830.6 2377.6,1716.7 2317.6,1536.7 2233.8,1396.7 2215.4,1366 2190.3,1335.5 2167.2,1310.4"];
+	n12 -> n14	 [pos="e,812.57,842.04 1357,1697 1185.1,1685.7 899.77,1655.6 833.8,1577.8 787.28,1522.9 804.7,1023.4 812.13,852.12"];
+	n18	 [height=2.5142,
+		label="c2_pre (18)\ndesc = output embeddings\nmodule = [0;34mnn.Sequential[0m[0;34m {[0m\l  [0;34m[input[0m[0;34m -> [0m[0;34m([\
+0m1[0;34m)[0m[0;34m -> [0m[0;34m([0m2[0;34m)[0m[0;34m -> [0m[0;34moutput][0m\l  [0;34m([0m1[0;34m): [0mnn.LookupTable\l  [\
+0;34m([0m2[0;34m): [0mnn.Sum\l[0;34m}[0m\lreverseMap = {}",
+		pos="1533.8,1487.3",
+		tooltip="[train.lua]:125_",
+		width=19.19];
+	n12 -> n18	 [pos="e,1515.4,1578 1501.6,1645.7 1505.2,1627.9 1509.3,1607.8 1513.4,1588"];
+	n19	 [height=1.3356,
+		label="x (19)\ndesc = memories\nmodule = nn.Identity\lreverseMap = {}",
+		pos="1647.8,402.16",
+		tooltip="[train.lua]:107_",
+		width=2.6124];
+	n13 -> n19	 [pos="e,1560.1,419.83 1128.5,501.87 1283.4,472.41 1448.7,440.99 1550.2,421.71"];
+	n20	 [height=1.3356,
+		label="Node20\ninput = {}\lselectindex = 3\lreverseMap = {}",
+		pos="833.8,402.16",
+		tooltip="[[C]]:-1_-3",
+		width=2.1606];
+	n14 -> n20	 [pos="e,756.09,405.5 703.18,791.7 509.47,787.21 123.67,765.8 39.8,667.26 -12.344,605.99 -14.047,546.02 39.8,486.24 86.416,434.49 549.33,\
+412.79 746.07,405.85"];
+	n21	 [height=1.3356,
+		label="q (21)\ndesc = query\nmodule = nn.Identity\lreverseMap = {}",
+		pos="3442.8,576.75",
+		tooltip="[train.lua]:108_",
+		width=2.6124];
+	n15 -> n21	 [pos="e,3529.1,596.03 3931.6,750.98 3908.6,734.42 3880.9,716.26 3853.8,703.26 3750.9,653.84 3624.3,618.67 3539,598.37"];
+	n16 -> n9	 [pos="e,3708.9,1093.1 3520.2,1146.5 3579.9,1129.6 3641.3,1112.2 3699.3,1095.9"];
+	n22	 [height=1.6303,
+		label="m (22)\ndesc = memory embeddings\nmodule = nn.CMulTable\lreverseMap = {}\lmapindex = {Node27,Node14}",
+		pos="3154.8,1010.8",
+		tooltip="[train.lua]:116_",
+		width=3.7123];
+	n16 -> n22	 [pos="e,3156.3,1069.6 3158,1137.2 3157.5,1117.5 3157,1097.6 3156.5,1079.6"];
+	n17 -> n14	 [pos="e,900.61,824.9 2002.3,1211.7 1757.7,1125.8 1146.6,911.25 910.22,828.27"];
+	n23	 [height=2.5142,
+		label="c_pre (23)\ndesc = output embeddings\nmodule = [0;34mnn.Sequential[0m[0;34m {[0m\l  [0;34m[input[0m[0;34m -> [0m[0;34m([\
+0m1[0;34m)[0m[0;34m -> [0m[0;34m([0m2[0;34m)[0m[0;34m -> [0m[0;34moutput][0m\l  [0;34m([0m1[0;34m): [0mnn.LookupTable\l  [\
+0;34m([0m2[0;34m): [0mnn.Sum\l[0;34m}[0m\lreverseMap = {}",
+		pos="2177.8,793.77",
+		tooltip="[train.lua]:115_",
+		width=19.19];
+	n17 -> n23	 [pos="e,2163.6,884.27 2115,1190.2 2126.8,1115.6 2147.6,984.92 2162,894.29"];
+	n18 -> n19	 [pos="e,1610.5,446.57 1511,1396.4 1488.9,1301.5 1458.8,1147.1 1458.8,1011.8 1458.8,1011.8 1458.8,1011.8 1458.8,792.77 1458.8,660.3 1548.3,\
+525.6 1604.2,454.5"];
+	n24	 [height=1.3356,
+		label="Node24\ninput = {}\lselectindex = 1\lreverseMap = {}",
+		pos="1647.8,269.99",
+		tooltip="[[C]]:-1_-1",
+		width=2.1606];
+	n19 -> n24	 [pos="e,1647.8,318.1 1647.8,353.8 1647.8,345.53 1647.8,336.84 1647.8,328.34"];
+	n25	 [height=1.041,
+		label="Node25\nreverseMap = {}\lnSplitOutputs = 3",
+		pos="1647.8,148.43",
+		tooltip="[[C]]:-1_ split at [...e/naveen/torch/install/share/lua/5.1/nngraph/gmodule.lua]:96-mnode",
+		width=2.2392];
+	n20 -> n25	 [pos="e,1581.6,169.89 902.85,379.8 1054.3,332.97 1414.6,221.54 1572,172.86"];
+	n26	 [height=1.3356,
+		label="Node26\ninput = {}\lselectindex = 2\lreverseMap = {}",
+		pos="2226.8,269.99",
+		tooltip="[[C]]:-1_-2",
+		width=2.1606];
+	n21 -> n26	 [pos="e,2298.4,288.94 3358.7,554.68 3135.3,498.68 2528.8,346.67 2308.3,291.41"];
+	n22 -> n14	 [pos="e,919.35,810.84 3022.2,1002.6 2738.5,986.48 2051.5,944.42 1477.8,884.28 1284.9,864.05 1061.5,832.12 929.48,812.36"];
+	n27	 [height=2.2195,
+		label="m_pre (27)\ndesc = memory embeddings\nmodule = [0;34mnn.Sequential[0m[0;34m {[0m\l  [0;34m[input[0m[0;34m -> [0m[0;34m([\
+0m1[0;34m)[0m[0;34m -> [0m[0;34moutput][0m\l  [0;34m([0m1[0;34m): [0mnn.Sum\l[0;34m}[0m\lreverseMap = {}",
+		pos="3365.8,793.77",
+		tooltip="[train.lua]:113_",
+		width=13.317];
+	n22 -> n27	 [pos="e,3289.1,872.89 3207,956.64 3229.6,933.56 3256.7,905.95 3282,880.12"];
+	n23 -> n19	 [pos="e,1700.9,442.17 2057.9,704.6 1949.4,624.87 1794.1,510.7 1709.1,448.24"];
+	n24 -> n25	 [pos="e,1647.8,186.02 1647.8,221.74 1647.8,213.29 1647.8,204.5 1647.8,196.07"];
+	n28	 [height=1.041,
+		label="Node28\ninput = {}\lreverseMap = {}",
+		pos="1647.8,37.477",
+		tooltip="[[C]]:-1_",
+		width=2.1606];
+	n25 -> n28	 [pos="e,1647.8,75.149 1647.8,110.85 1647.8,102.67 1647.8,93.893 1647.8,85.366"];
+	n26 -> n25	 [pos="e,1721,164.54 2153.5,253.85 2045.5,231.55 1844.4,190.02 1731,166.61"];
+	n29	 [height=1.3356,
+		label="x_pre (29)\ndesc = pre embeddings\nmodule = nn.LookupTable\lreverseMap = {}",
+		pos="2672.8,576.75",
+		tooltip="[train.lua]:111_",
+		width=3.2213];
+	n27 -> n29	 [pos="e,2764.5,606.21 3141.3,723.11 3017.6,684.74 2870.2,639.01 2774.2,609.22"];
+	n29 -> n19	 [pos="e,1736.6,418.1 2566,557.77 2366.4,524.16 1939.6,452.3 1746.4,419.76"];
+}
